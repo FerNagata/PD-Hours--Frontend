@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #f5f5f5;
+}
+
+.mat-toolbar {
+    background-color: #FFF !important;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+.card {
+    background-color: #FFF;
+    padding: 64px 32px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px !important;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+
+    th {
+        color: #FFF;
+        background-color: #4163EB !important;
+        text-align: center !important;
+        padding: 0px !important;
+    }
+
+    td {
+        border-bottom-color: #E0E0E0 !important;
+        text-align: center !important;
+    }
+}
+
+.mat-column-name {
+    min-height: 20px !important;
+    height: 10px !important;
+}
+
+.btn-blue {
+    padding: 15px 45px;
+    font-size: 16px;
+    text-transform: none;
+    background-color: #4163EB;
+    border-radius: 8px;
+    border: none;
+    color: #FFF;
+}
+
+.btn-blue:hover {
+    cursor: pointer;
+}
