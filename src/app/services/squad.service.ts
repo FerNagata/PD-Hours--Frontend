@@ -39,7 +39,7 @@ export class SquadService {
   * @returns Observable<ISquadData> - An observable containing the squad's total hours spent data.
   */
   getTotalHoursSpent(squad_id: number, start_date: Date, end_date: Date): Observable<ISquadData> {
-    return this.http.get<ISquadData>(this.apiURL + "/squad/read-total-spent-hours/" + squad_id + "?squad_id=" + squad_id + "&start_date=" + start_date + "&end_date=" + end_date);
+    return this.http.get<ISquadData>(this.apiURL + "/squad/read-total-spent-hours" + "?squad_id=" + squad_id + "&start_date=" + start_date + "&end_date=" + end_date);
   }
 
   /**
@@ -50,6 +50,6 @@ export class SquadService {
    * @returns Observable<ISquadDataAverageHours> - An observable containing the squad's average amount of hours spent.
    */
   getAverageHoursSpent(squad_id: number, start_date: Date, end_date: Date): Observable<ISquadDataAverageHours> {
-    return this.http.get<ISquadDataAverageHours>(this.apiURL + "/squad/read-average-spent-hours/" + squad_id + "?squad_id=" + squad_id + "&start_date=" + start_date + "&end_date=" + end_date);
+    return this.http.get<ISquadDataAverageHours>(this.apiURL + "/squad/read-average-spent-hours" + "?squad_id=" + squad_id + "&start_date=" + start_date + "&end_date=" + end_date);
   }
 }

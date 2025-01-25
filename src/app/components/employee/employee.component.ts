@@ -27,7 +27,9 @@ export class EmployeeComponent {
     this.employeeService.getAllEmployee().subscribe((data: IEmployee[]) => {
       this.employeesList = data;
     }, error => {
-      alert('Erro ao tentar pegar os funcionários');
+      if(error.status != 404){
+        alert('Erro ao tentar pegar os funcionários');
+      }
     });
   }
 

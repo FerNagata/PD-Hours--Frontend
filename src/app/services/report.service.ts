@@ -30,6 +30,6 @@ export class ReportService {
    * @returns Observable<ISquadMembersData[]> - An observable containing a list with all squad members data.
    */
   getAllMemberReports(squad_id: number, start_date: Date, end_date: Date): Observable<ISquadMembersData[]> {
-    return this.http.get<ISquadMembersData[]>(this.apiURL + "/report/read-all-reports-from-squad/" + squad_id + "?squad_id=" + squad_id + "&start_date=" + start_date + "&end_date=" + end_date);
+    return this.http.get<ISquadMembersData[]>(this.apiURL + "/report/read-all-reports-from-squad" + "?squad_id=" + squad_id + "&start_date=" + start_date + "&end_date=" + end_date);
   }
 }

@@ -38,6 +38,7 @@ export class SquadDataComponent {
   displayedColumns: string[] = ['member', 'description', 'spentHours', 'createdAt'];
   totalHours: number = 0;
   averageHoursPerDay: number = 0;
+  reportsNotFound: boolean = false;
 
   /**
    *  On component initialization, retrieves the params pass by the route
@@ -74,8 +75,12 @@ export class SquadDataComponent {
         alert('Erro ao tentar pegar a média de horas por dia gastas');
       });
     }, error => {
-      if (error.status == 404) {
-        this.squadData = null
+      console.log(error)
+      if (error.status === 404 && error.error['detail'] === "Reports not found"){
+        this.reportsNotFound = true;
+        this.squadData = null;
+      } else if (error.status == 404) {
+        this.squadData = null;
       }
     });
   }
