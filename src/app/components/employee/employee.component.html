@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card">
+
+        @if (employeesList.length > 0){
+
+        <table mat-table [dataSource]="employeesList" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="estimatedHours">
+                <th mat-header-cell *matHeaderCellDef> Horas estimadas </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.estimatedHours}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="squadId">
+                <th mat-header-cell *matHeaderCellDef> Squad ID </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.squadId}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        }
+        @else {
+        <embed src="../../../../icons/sad-icon.svg" type="image/svg+xml" />
+        <p style="color: #ACB5BD;">Nenhum usuário cadastrado. Crie um usuário para começar.</p>
+        }
+
+        <button class="btn-blue" (click)="openDialog()">
+            Criar usuário
+        </button>
+    </div>
+</div>

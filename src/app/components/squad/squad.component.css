@@ -1,0 +1,18 @@
+table {
+    margin-bottom: 40px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #ACB5BD;
+}
+
+.btn {
+    background-color: #4163EB;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 8px 14px;
+    font-size: 16px;
+    font-weight: 600;
+}

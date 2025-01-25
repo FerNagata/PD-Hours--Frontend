@@ -1,0 +1,76 @@
+<mat-toolbar>
+    <span class="title">PD Hours</span>
+    <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="container">
+    <button (click)="goBack()" class="back-button">Voltar</button>
+    <h1>
+        {{ squadName }}
+    </h1>
+    <div class="card">
+        <div class="filter">
+            <div class="input-data">
+                <label for="start_date">Início</label>
+                <input class="form-control" id="start_date" type="date" [(ngModel)]="start_date" />
+            </div>
+
+            <div class="input-data">
+                <label for="end_date">Fim</label>
+                <input class="form-control" id="end_date" type="date" [(ngModel)]="end_date" />
+            </div>
+
+            <button class="btn-blue" (click)="getData()">Filtrar por data</button>
+        </div>
+
+        @if (squadData != null && squadData.length > 0){
+        <h3>Horas por membro</h3>
+        <table mat-table [dataSource]="squadData" class="mat-elevation-z8">
+            <ng-container matColumnDef="member">
+                <th mat-header-cell *matHeaderCellDef> Membro </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.member}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> Descrição </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.description}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="spentHours">
+                <th mat-header-cell *matHeaderCellDef> Horas </th>
+                <td mat-cell *matCellDef="let employee"> {{employee.spentHours}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="createdAt">
+                <th mat-header-cell *matHeaderCellDef> Criado em </th>
+                <td mat-cell *matCellDef="let employee">
+                    {{ employee.createdAt | date:'dd/MM/yyyy' }}
+                </td>
+
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        <div class="summary">
+            <h3>Horas totais da squad</h3>
+            <p class="highlight-data">{{ totalHours }} Horas</p>
+
+            <h3>Média de horas por dia</h3>
+            <p class="highlight-data">{{ averageHoursPerDay }} Horas/Dia</p>
+        </div>
+        }
+        @else if (squadData != null && squadData.length == 0){
+        <div>Escolha uma data de início e fim para encontrar detalhes sobre essa squad.</div>
+        }
+        @else{
+        <embed src="../../../../icons/sad-icon.svg" type="image/svg+xml" />
+        <p>Nenhum usuário cadastrado nesta squad. Crie um usuário para começar</p>
+        <button class="btn-blue" (click)="openDialog()">
+            Criar usuário
+        </button>
+        }
+
+    </div>
+</div>

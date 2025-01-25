@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <span class="title">PD Hours</span>
+    <span class="spacer"></span>
+    <button class="btn-blue" (click)="openDialog()">
+        Lançar horas
+    </button>
+</mat-toolbar>
+
+<mat-tab-group [selectedIndex]="selectedTab" mat-stretch-tabs="false" mat-align-tabs="start"
+    style="background-color: #fff;">
+    <mat-tab label="Squads">
+        <app-squad></app-squad>
+    </mat-tab>
+    <mat-tab label="Usuários">
+        <app-employee></app-employee>
+    </mat-tab>
+</mat-tab-group>

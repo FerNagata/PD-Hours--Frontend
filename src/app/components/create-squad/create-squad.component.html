@@ -1,0 +1,32 @@
+<div class="modal-dialog">
+  <h2 mat-dialog-title>Criar lançamento</h2>
+
+  @if (nameError) {
+  <div class="error-message">
+    <embed class="input-icon" src="../../../icons/alert-triangle.svg" type="image/svg+xml" />
+
+    <span style="padding-left: 10px;">{{ errorMessage }}</span>
+    <button mat-icon-button (click)="errorMessage = null; nameError = false; name = '';">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  }
+
+  <mat-dialog-content>
+    <form action="#">
+      <div class="input-data">
+        <label>Nome da squad</label>
+        <div class="input-wrapper">
+          <input type="name" class="form-control" id="name" [(ngModel)]="name" name="name"
+            placeholder="Digite o nome da squad" [class.error]="nameError" required>
+          @if(nameError){
+          <embed class="input-icon" src="../../../icons/alert-triangle.svg" type="image/svg+xml" />
+
+
+          }
+        </div>
+      </div>
+    </form>
+    <button type="button" (click)="create()" class="btn-blue">Criar lançamento</button>
+  </mat-dialog-content>
+</div>

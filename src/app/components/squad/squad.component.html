@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        @if(squadsList.length > 0){
+        <table mat-table [dataSource]="squadsList" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let squad"> {{squad.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let squad"> {{squad.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let squad">
+                    <button class="btn" (click)="openSquadDetails(squad.id, squad.name)">
+                        Visitar squad
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        }
+        @else {
+        <embed src="../../../../icons/sad-icon.svg" type="image/svg+xml" />
+        <p>Nenhuma squad cadastrado. Crie uma squad para começar.</p>
+
+        }
+
+        <button class="btn-blue" (click)="openDialog()">
+            Criar squad
+        </button>
+    </div>
+</div>

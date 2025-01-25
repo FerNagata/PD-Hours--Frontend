@@ -1,0 +1,47 @@
+<div class="modal-dialog">
+  <h2 mat-dialog-title>Criar Usuário</h2>
+
+  @if (errorMessage != null) {
+  <div class="error-message">
+    <embed class="input-icon" src="../../../icons/alert-triangle.svg" type="image/svg+xml" />
+
+    <span style="padding-left: 10px;">{{ errorMessage }}</span>
+    <button mat-icon-button (click)="cleanError()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  }
+
+  <mat-dialog-content>
+    <form action="#">
+      <div class="input-data">
+        <label>Nome do usuário</label>
+        <div class="input-wrapper">
+          <input type="name" class="form-control" id="name" [(ngModel)]="employeeObj.name" name="name"
+            placeholder="Digite o nome do usuário" [class.error]="nameError" required>
+          @if(nameError){
+          <embed class="input-icon" src="../../../icons/alert-triangle.svg" type="image/svg+xml" />
+          }
+        </div>
+      </div>
+      <div class="input-data">
+        <label>Horas estimadas de trabalho</label>
+        <input type="estimatedHours" class="form-control" id="estimatedHours" [(ngModel)]="employeeObj.estimatedHours"
+          name="estimatedHours" placeholder="Digite a quantidade de horas" required>
+      </div>
+      <div class="input-data">
+        <label>Squad</label>
+        <div class="input-wrapper">
+          <input type="squadId" class="form-control" id="squadId" [(ngModel)]="employeeObj.squadId" name="squadId"
+            placeholder="Digite o ID da squad" [class.error]="squadError" required />
+          @if(squadError){
+          <embed class="input-icon" src="../../../../icons/alert-triangle.svg" type="image/svg+xml" />
+          }
+        </div>
+      </div>
+
+    </form>
+    <button type="button" (click)="create()" class="btn-blue">Criar usuário</button>
+  </mat-dialog-content>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="modal-dialog">
+  <h2 mat-dialog-title>Criar lançamento</h2>
+
+  @if (idError) {
+  <div class="error-message">
+    <embed class="input-icon" src="../../../icons/alert-triangle.svg" type="image/svg+xml" />
+    <span style="padding-left: 10px;">{{ errorMessage }}</span>
+    <button mat-icon-button (click)="errorMessage = null; idError = false; reportObj.employeeId = '';">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  }
+
+  <mat-dialog-content>
+    <form action="#">
+      <div class="input-data">
+        <label>ID do usuário</label>
+        <div class="input-wrapper">
+          <input type="employeeId" class="form-control" id="employeeId" [(ngModel)]="reportObj.employeeId"
+            name="employeeId" placeholder="Digite o ID do funcionário" [class.error]="idError" required>
+          @if(idError){
+          <embed class="input-icon" src="../../../icons/alert-triangle.svg" type="image/svg+xml" />
+
+          }
+        </div>
+      </div>
+      <div class="input-data">
+        <label>Horas gastas</label>
+        <input type="spentHours" class="form-control" id="spentHours" [(ngModel)]="reportObj.spentHours"
+          name="spentHours" placeholder="Digite a quantidade de horas" required>
+      </div>
+      <div class="input-data">
+        <label>Descrição</label>
+        <textarea type="description" class="form-control" id="description" [(ngModel)]="reportObj.description"
+          name="description" placeholder="Descrição da tarefa realizada. Ex.: Refatoração do backend"
+          required></textarea>
+      </div>
+
+    </form>
+    <button type="button" (click)="create()" class="btn-blue">Criar lançamento</button>
+  </mat-dialog-content>
+</div>
