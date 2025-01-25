@@ -1,59 +1,50 @@
-# PdHoursFrontend
+# Pd Hours Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+Neste repositório encontra-se o frontend do sistema de controle de horas PD Hours. A aplicação fornece áreas dedicadas para o gerenciamento de funcionários, squads e relatórios, permitindo a criação e visualização de novos registros. Além disso, oferece uma seção com dados analíticos relacionados às horas registradas nos relatórios de uma squad, proporcionando uma visão geral e detalhada do desempenho das squads.
 
-## Development server
+## Tecnologias utilizadas
+- HTML/CSS/JavaScript: Linguagens principais para construção das interfaces.
+- Angular:  Framework para construção de aplicações web
 
-To start a local development server, run:
+## Como executar
+### Pré-requisitos
+- Node.js (versão 20.16.0 ou superior)
+- Angular CLI (versão 19.1.4 ou superior)
 
-```bash
-ng serve
-```
+Para iniciar o servidor de desenvolvimento local, siga os passos abaixo:
+	
+1.	Instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+2.	Inicie o servidor de desenvolvimento:
+    ```bash
+    ng serve
+    ```
+    
 
-## Code scaffolding
+Depois que o servidor estiver em execução, abra seu navegador e navegue até `http://localhost:4200/`. 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Obs: O aplicativo será recarregado automaticamente sempre que você modificar qualquer um dos arquivos de origem.
 
-```bash
-ng generate component component-name
-```
+---
+### Padrões de Commit
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Este repositório segue uma convenção de commits para manter um histórico claro e consistente. Abaixo está uma tabela com os tipos de commits e suas descrições.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Tipo de Commit | Descrição |
+| -------------- | --------- |
+| `feat`         | Adição de uma nova funcionalidade |
+| `fix`          | Correção de um bug |
+| `docs`         | Mudanças na documentação |
+| `style`        | Alterações que não afetam o significado do código (espaços em branco, formatação, ponto e vírgula ausente, etc.) |
+| `refactor`     | Refatoração de código, que não altera a funcionalidade nem corrige bugs |
+| `perf`         | Alterações de código que melhoram o desempenho |
+| `test`         | Adição ou correção de testes |
+| `build`        | Mudanças que afetam o sistema de build ou dependências externas (ferramentas de compilação, bibliotecas, etc.) |
+| `ci`           | Mudanças em arquivos e scripts de configuração de CI (Integração Contínua) |
+| `chore`        | Outras mudanças que não modificam o código fonte ou os testes |
+| `revert`       | Reversão de um commit anterior |
+| `merge`        | Mesclagem de branches |
+| `hotfix`       | Correção urgente de um bug crítico |
